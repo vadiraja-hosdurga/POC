@@ -8,7 +8,7 @@ public class LoginPage extends PageInitializer {
  
   @Test
   public void login() {
-	  loginPage().enterUserName("")
+	  loginPage().enterUserName("mighdoge+nzowner@gmail.com")
 	  .enterPassword("1234")
 	  .clickOnLoginButton();
   }
