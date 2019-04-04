@@ -62,11 +62,11 @@ public class Waiting {
 	public void explicitWaitVisibilityOfElement(WebElement element, int time) {
 		new WebDriverWait(driver, time).until(ExpectedConditions.visibilityOf(element));
 	}
-
+/*
 	public void explicitWaitInVisibilityOfElement(WebElement element, int time) {
 		new WebDriverWait(driver, time).until(ExpectedConditions.invisibilityOf(element));
 	}
-
+*/
 	public void explicitWaitInVisibilityOfElement(By element, int time) {
 		new WebDriverWait(driver, time).until(ExpectedConditions.invisibilityOfElementLocated(element));
 	}
