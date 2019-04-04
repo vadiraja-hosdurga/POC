@@ -5,17 +5,23 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class MainController {
-	public static ChromeDriver driver;
+	public static WebDriver driver;
 	
   @BeforeClass
-  public void init() {
-	  System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-	   driver=new ChromeDriver();
+  public void init() throws MalformedURLException {
+	  DesiredCapabilities caps = new DesiredCapabilities();
+	  caps.setBrowserName("chrome");
+	   driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),caps);
 	  driver.get("https://app.mighway.com/signin");
 	  driver.manage().window().maximize();
   }
