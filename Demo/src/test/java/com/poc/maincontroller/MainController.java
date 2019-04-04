@@ -14,6 +14,7 @@ public class MainController {
 	
   @BeforeClass
   public void init() {
+	  System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 	   driver=new ChromeDriver();
 	  driver.get("https://app.mighway.com/signin");
 	  driver.manage().window().maximize();
