@@ -1,6 +1,9 @@
 # Maven
 - task: Bash@3
   inputs:
+    filePath: 'Demo/src/test/resources/hub.sh'
+- task: Bash@3
+  inputs:
     filePath: 'Demo/src/test/resources/node.sh'
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
